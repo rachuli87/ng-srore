@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.productService.getProducts$().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
-    this.ngAfterViewInit();
+    // this.ngAfterViewInit();
     // this.dataSource = ELEMENT_DATA;
   }
   ngOnDestroy(): void {

@@ -62,7 +62,7 @@
             <mat-icon>visibility</mat-icon>
             <span>view</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item [routerLink]="['/product/edit', element.id]">
             <mat-icon>edit</mat-icon>
             <span>Edit</span>
           </button>
