@@ -22,11 +22,11 @@ export class EditProductComponent implements OnInit, OnDestroy {
       this.id = params['id'];
     });
 
-    this.productService.getSingleProducts$(this.id).subscribe((data) => {
-      this.product = data;
-    });
+    // this.productService.getSingleProducts$(this.id).subscribe((data) => {
+    //   this.product = data;
+    // });
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 }

@@ -25,6 +25,7 @@
   top: 0;
   left: 0;
   transition: 0.3 all ease;
+
   &--open {
     pointer-events: none;
     opacity: 1;

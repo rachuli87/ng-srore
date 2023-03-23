@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.productService.getProducts$().subscribe((data) => {
       this.products = data;
     });
+    this.productService.fetchProduct();
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 }

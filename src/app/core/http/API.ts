@@ -3,3 +3,5 @@ export const Routes: { [key: string]: any } = {
   singleProduct: (productId: string) =>
     `https://fakestoreapi.com/products/${productId}`,
 };
+
+//https://dummyjson.com/products
