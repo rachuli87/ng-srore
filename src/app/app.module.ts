@@ -12,9 +12,10 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { MaterialModule } from './material/material.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

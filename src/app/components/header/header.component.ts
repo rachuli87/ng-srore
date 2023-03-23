@@ -5,4 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  public sidebarOpen = false;
+
+  public openSidebar(): void {
+    this.sidebarOpen = true;
+    console.log('sss');
+  }
+
+  public closeSidebar(): void {
+    this.sidebarOpen = false;
+  }
+}

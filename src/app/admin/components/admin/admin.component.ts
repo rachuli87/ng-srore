@@ -51,7 +51,7 @@ export class AdminComponent implements OnInit, OnDestroy {
     // this.dataSource = ELEMENT_DATA;
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   resultsLength = 0;

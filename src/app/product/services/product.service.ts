@@ -11,19 +11,25 @@ import { PRODUCTS_MOCK } from './products.mock';
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  // public getProducts$(): Observable<IProduct[]> {
-  //   return of(PRODUCTS_MOCK);
-  // }
   public getProducts$(): Observable<IProduct[]> {
-    // const headerDict = {
-    //   'Content-Type': 'application/json',
-    //   Accept:
-    //   'Access-Control-Allow-Header': 'Content-Type',
-    // };
-    // const requestOptions = {
-    //   Headers: new Headers(headerDict),
-    // };
+    return of(PRODUCTS_MOCK);
+  }
 
-    return this.http.get<IProduct[]>(Routes['allProducts']); //like ajax
+  //   public getProducts$(): Observable<IProduct[]> {
+  //   const headerDict = {
+  //     'Content-Type': 'application/json',
+  //     Accept:
+  //     'Access-Control-Allow-Header': 'Content-Type',
+  //   };
+  //   const requestOptions = {
+  //     Headers: new Headers(headerDict),
+  //   };
+
+  //     return this.http.get<IProduct[]>(Routes['allProducts']); //like ajax
+  //   }
+  // }
+
+  public getSingleProducts$(id: string): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(Routes['singleProduct'](id)); //like ajax
   }
 }
