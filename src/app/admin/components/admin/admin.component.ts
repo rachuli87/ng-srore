@@ -1,8 +1,10 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductService } from 'src/app/product/services/product.service';
+import { ProductFormComponent } from 'src/app/shared/components/product-form/product-form.component';
 import { IProduct } from 'src/app/shared/models';
 
 // export interface PeriodicElement {
@@ -42,11 +44,16 @@ export class AdminComponent implements OnInit, OnDestroy {
   ];
   // public dataSource = ELEMENT_DATA;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    public dialog: MatDialog
+  ) {}
   ngOnInit(): void {
     this.productService.getProducts$().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+    this.productService.fetchProduct();
+
     // this.ngAfterViewInit();
     // this.dataSource = ELEMENT_DATA;
   }
@@ -77,5 +84,13 @@ export class AdminComponent implements OnInit, OnDestroy {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ProductFormComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
